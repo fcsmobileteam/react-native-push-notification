@@ -459,8 +459,13 @@ public class RNPushNotificationHelper {
 
             int notificationID = Integer.parseInt(notificationIdString);
 
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationID, intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent
+            
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                pendingIntent = PendingIntent.getActivity(context, notificationID, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+            } else {
+                pendingIntent = PendingIntent.getActivity(context, notificationID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            }
 
             NotificationManager notificationManager = notificationManager();
 
