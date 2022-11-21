@@ -55,6 +55,8 @@ dependencies {
     implementation "$appCompatLibName:$supportLibVersion"
     implementation 'com.facebook.react:react-native:+'
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation "com.google.firebase:firebase-messaging:${safeExtGet('firebaseMessagingVersion', '21.1.0')}"
+    implementation 'androidx.work:work-runtime:2.7.1' 
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
     implementation "com.google.android.gms:play-services-base:${safeExtGet('playServicesBase', '17.6.0')}"
 }
